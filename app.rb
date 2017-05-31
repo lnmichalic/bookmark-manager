@@ -8,4 +8,8 @@ get '/' do
 end
 
 
+get '/links' do
+  'BLAh'
+end
+
 end
