@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './app/models/link'
 
 class DatabaseApp < Sinatra::Base
 
@@ -9,7 +10,8 @@ end
 
 
 get '/links' do
-  'BLAh'
+  @links = Link.all
+  erb :links
 end
 
 end

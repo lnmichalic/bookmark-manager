@@ -1,6 +1,6 @@
 require 'capybara'
 require 'capybara/rspec'
-require './app/models/links'
+require './app/models/link'
 require './app.rb'
 
 ENV['RACK_ENV'] = 'test'
