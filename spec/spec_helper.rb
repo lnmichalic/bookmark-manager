@@ -1,3 +1,4 @@
+ENV['RACK_ENV'] = 'test'
 require 'capybara'
 require 'capybara/rspec'
 require './app/models/link'
@@ -5,7 +6,6 @@ require './app.rb'
 require 'database_cleaner'
 require 'dm-transactions'
 
-ENV['RACK_ENV'] = 'test'
 
 Capybara.app = DatabaseApp
 
