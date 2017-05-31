@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './app/models/link'
+require 'database_cleaner'
 
 class DatabaseApp < Sinatra::Base
 
@@ -20,6 +21,7 @@ class DatabaseApp < Sinatra::Base
   end
 
   post '/links' do
-    Link.new(params[:title], params[:url])
+    Link.create(title: params[:title], url: params[:url])
+    redirect '/links'
   end
 end
