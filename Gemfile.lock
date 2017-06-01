@@ -130,6 +130,7 @@ DEPENDENCIES
   database_cleaner
   dm-postgres-adapter
   dm-transactions
+  rake
   rspec
   rubocop
   sinatra
@@ -138,4 +139,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.0

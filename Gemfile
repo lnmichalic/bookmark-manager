@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby '2.4.1'
 
-
+gem 'rake'
 gem 'sinatra'
 gem 'rubocop'
 gem 'data_mapper'
