@@ -1,8 +1,9 @@
 ENV['RACK_ENV'] ||= 'development'
-
+require_relative 'data_mapper_setup'
 require 'sinatra/base'
-require './app/models/link'
-require 'database_cleaner'
+
+# require './app/models/link'
+# require './database_cleaner'
 
 class DatabaseApp < Sinatra::Base
 
@@ -23,7 +24,10 @@ class DatabaseApp < Sinatra::Base
   end
 
   post '/links' do
-    Link.create(title: params[:title], url: params[:url])
+    tag = Tag.create(tag: params[:tags])
+    link = Link.create(title: params[:title], url: params[:url])
+    link.tags << tag
+    link.save
     redirect '/links'
   end
 end
