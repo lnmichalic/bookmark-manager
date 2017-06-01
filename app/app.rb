@@ -30,4 +30,11 @@ class DatabaseApp < Sinatra::Base
     link.save
     redirect '/links'
   end
+
+  get '/tags/:tag' do
+    tag = Tag.first(tag: params[:tag])
+    @links = tag ? tag.links : []
+    erb :links
+  end
+
 end
